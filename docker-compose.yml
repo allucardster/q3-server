@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  quake3:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: always
+    ports:
+        - "27960:27960/udp"
+    volumes:
+        - './q3/baseq3/pak0.pk3:/usr/share/games/quake3/baseq3/pak0.pk3'
+        - './q3/osp/:/usr/share/games/quake3/osp'
+        - './q3/server.cfg:/usr/share/games/quake3/baseq3/server.cfg'
